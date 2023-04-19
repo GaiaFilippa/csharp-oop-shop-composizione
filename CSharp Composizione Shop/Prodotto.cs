@@ -13,6 +13,7 @@ namespace CSharp_Composizione_Shop
         private string nome;
         private string descrizione;
         private float prezzo;
+        private Categoria categoria;
 
 
         // STATI
@@ -55,6 +56,16 @@ namespace CSharp_Composizione_Shop
             return (float)this.prezzo;
         }
 
+        public Categoria GetCategoria()
+        {
+            return this.categoria;
+        }
+
+        public void SetCategoria( Categoria categoria)
+        {
+            this.categoria = categoria;
+        }
+
         // METODI
 
         public string ConcatenaNomeECodice()
@@ -72,5 +83,8 @@ namespace CSharp_Composizione_Shop
 
             return rapprStringa;
         }
+
+       
+
     }
 }

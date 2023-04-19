@@ -14,6 +14,7 @@ namespace CSharp_Composizione_Shop
         private string indirizzo;
         private int numeroCivico;
         private List<Prodotto> prodotti;
+        private List<Categoria> categoria;
 
 
 
@@ -26,6 +27,7 @@ namespace CSharp_Composizione_Shop
             this.numeroCivico = numeroCivico;
 
             this.prodotti = new List<Prodotto>();
+            this.categoria = new List<Categoria>();
 
         }
 
@@ -70,6 +72,18 @@ namespace CSharp_Composizione_Shop
 
         }
 
+
+
+        public void aggiungiCategoria(List<Categoria> categoriaDaAggiungere)
+        {
+
+            foreach (Categoria aggiuntaCategoria in categoriaDaAggiungere)
+            {
+                this.categoria.Add(aggiuntaCategoria);
+            }
+
+        }
+
         public string DammiLaTuaRappresentazioneInStringa()
         {
             string rapprStringa = "Nome del Negozio: " + this.nomeNegozio + "\n";
@@ -80,6 +94,11 @@ namespace CSharp_Composizione_Shop
             foreach (Prodotto prodottoScansionato in prodotti)
             {
                 rapprStringa += prodottoScansionato.GetProdottoStringa() + "\n";
+            }
+
+            foreach (Categoria categoriaScansionata in categoria)
+            {
+                rapprStringa += categoriaScansionata.GetCategoriaStringa() + "\n";
             }
 
             rapprStringa += "\n";
