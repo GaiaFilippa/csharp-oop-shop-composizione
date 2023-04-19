@@ -63,6 +63,14 @@ namespace CSharp_Composizione_Shop
             return nomeECodice;
         }
 
+        public string GetProdottoStringa()
+        {
+            string rapprStringa = "Nome del prodotto: " + this.nome + "\n";
+            rapprStringa += "Descrizione del prodotto: " + this.descrizione + "\n";
+            rapprStringa += "Prezzo: " + this.prezzo + " euro" + "\n";
+            rapprStringa += "Codice: " + this.codice;
 
+            return rapprStringa;
+        }
     }
 }

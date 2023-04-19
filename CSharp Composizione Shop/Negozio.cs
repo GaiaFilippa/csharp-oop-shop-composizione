@@ -60,6 +60,32 @@ namespace CSharp_Composizione_Shop
 
 
         // METODI
+        public void aggiungiListaDiProdotti(List<Prodotto> listaDiProdottiDaAggiungere)
+        {
+
+            foreach (Prodotto nuovoProdottoDaAggiungere in listaDiProdottiDaAggiungere)
+            {
+                this.prodotti.Add(nuovoProdottoDaAggiungere);
+            }
+
+        }
+
+        public string DammiLaTuaRappresentazioneInStringa()
+        {
+            string rapprStringa = "Nome del Negozio: " + this.nomeNegozio + "\n";
+            rapprStringa += "Città: " + this.citta + "\n";
+            rapprStringa += "Indirizzo: " + this.indirizzo + ", " + this.numeroCivico + "\n";
+            rapprStringa += "Prodotti: \n";
+
+            foreach (Prodotto prodottoScansionato in prodotti)
+            {
+                rapprStringa += prodottoScansionato.GetProdottoStringa() + "\n";
+            }
+
+            rapprStringa += "\n";
+
+            return rapprStringa;
+        }
 
     }
 }
